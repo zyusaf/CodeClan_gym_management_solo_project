@@ -1,6 +1,6 @@
 class Member_Class:
-    def __init__(self, member, class, review, id = None):
+    def __init__(self, member, classes, review, id = None):
         self.member = member
-        self.class = class
+        self.classes = classes
         self.review = review
         self.id = id
