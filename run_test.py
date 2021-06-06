@@ -1,8 +1,8 @@
 import unittest
 
 from tests.member_test import TestMember
-from tests.class_test import TestClasses
-from tests.member_class_test import TestMember_Class
+from tests.session_test import TestSession
+from tests.member_session_test import TestMember_Session
 
 if __name__ == '__main__':
     unittest.main()

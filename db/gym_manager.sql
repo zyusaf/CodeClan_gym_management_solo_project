@@ -8,15 +8,15 @@ CREATE TABLE members (
     last_name VARCHAR(255)
 );
 
-CREATE TABLE classes (
+CREATE TABLE sessions (
     id SERIAL PRIMARY KEY,
     description VARCHAR(255),
     duration INT
 );
 
-CREATE TABLE member_classes (
+CREATE TABLE member_sessions (
     id SERIAL PRIMARY KEY
     member_id INT REFERENCES  members(id) ON DELETE CASCADE,
-    class_id INT REFERENCES classes(id) ON DELETE CASCADE,
+    session_id INT REFERENCES sessions(id) ON DELETE CASCADE,
     review TEXT
 );
