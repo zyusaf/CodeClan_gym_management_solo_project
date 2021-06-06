@@ -18,3 +18,22 @@ def select_all():
         session = Session(row['description'], row['duration'])
         sessions.append(session)
     return sessions
+
+def select(id):
+    session = None
+    sql = "SELECT * FROM sessions WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        session = Session(result['description'], result['duration'])
+    return session
+
+def delete_all():
+    sql = "DELETE FROM sessions"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM sessions WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

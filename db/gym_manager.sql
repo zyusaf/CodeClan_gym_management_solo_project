@@ -1,6 +1,6 @@
-DROP TABLE member_classes;
+DROP TABLE member_sessions;
 DROP TABLE members;
-DROP TABLE classes;
+DROP TABLE sessions;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
@@ -15,7 +15,7 @@ CREATE TABLE sessions (
 );
 
 CREATE TABLE member_sessions (
-    id SERIAL PRIMARY KEY
+    id SERIAL PRIMARY KEY,
     member_id INT REFERENCES  members(id) ON DELETE CASCADE,
     session_id INT REFERENCES sessions(id) ON DELETE CASCADE,
     review TEXT
