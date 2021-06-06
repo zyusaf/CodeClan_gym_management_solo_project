@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from models.member import Member
 from models.session import Session
 
 def save(session):
@@ -37,3 +38,21 @@ def delete(id):
     sql = "DELETE FROM sessions WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(session):
+    sql =  "UPDATE sessions SET (description, duration) = (%s, %s) WHERE id = %s"
+    values = [session.description, session.duration, session.id]
+    run_sql(sql, values)
+
+def members(session):
+    members = []
+
+    sql = "SELECT members.* FROM members INNER JOIN member_sessions ON member_sessions.member_id = members id WHERE session_id = %s"
+    values = [session.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        member = Member(row['first_name'], ['last_name'], row['id'])
+        members.append(member)
+    
+    return members
