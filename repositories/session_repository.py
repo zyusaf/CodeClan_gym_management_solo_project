@@ -16,7 +16,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        session = Session(row['description'], row['duration'])
+        session = Session(row['description'], row['duration'], row['id'])
         sessions.append(session)
     return sessions
 
@@ -27,7 +27,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        session = Session(result['description'], result['duration'])
+        session = Session(result['description'], result['duration'], result['id'])
     return session
 
 def delete_all():
