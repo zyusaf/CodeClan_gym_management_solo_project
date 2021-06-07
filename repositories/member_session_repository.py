@@ -23,6 +23,19 @@ def select_all():
         member_sessions.append(member_session)
     return member_sessions
 
+def select(id):
+    member_session = None
+
+    sql = "SELECT * FROM member_sessions WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    
+    if result is not None:
+        member = member_repository.select(result['member_id'])
+        session = session_repository.select(result['session_id'])
+        member_session = Member_Session(member, session, result['id'])
+    return member_session
+
 def delete_all():
     sql = "DELETE FROM member_sessions"
     run_sql(sql)
@@ -30,4 +43,9 @@ def delete_all():
 def delete(id):
     sql = "DELETE FROM member_sessions WHERE id = %s"
     values = [id]
+    run_sql(sql, values)
+
+def update(member_session):
+    sql = "UPDATE member_sessions SET (member_id, session_id) = (%s, %s) WHERE id = %s"
+    values = [member_session.member.id, member_session.session.id, member_session.id]
     run_sql(sql, values)
