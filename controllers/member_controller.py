@@ -1,7 +1,11 @@
+from itertools import filterfalse
+from models.member_session import Member_Session
+from repositories import member_session_repository, session_repository
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.member import Member
 import repositories.member_repository as member_repository
+from itertools import filterfalse
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -47,9 +51,21 @@ def delete_member(id):
     member_repository.delete(id)
     return redirect('/members')
 
+@members_blueprint.route("/members/<member_id>/add_session", methods=['POST'])
+def add_session_to_member(member_id):
+    member = member_repository.select(member_id)
+    session = session_repository.select(request.form["session_id"])
+    member_session = Member_Session(member, session, "")
+    member_session_repository.save(member_session)
+
+    return redirect(f"/members/{member_id}")
+
 #SHOW
-# @members_blueprint.route("/members/<id>")
-# def show(id):
-#     member = member_repository.select(id)
-#     sessions = member_repository.sessions(member)
-#     return render_template("members/show.html", member = member, sessions = sessions)
+@members_blueprint.route("/members/<id>")
+def show(id):
+    member = member_repository.select(id)
+    sessions = member_repository.sessions(member)
+    all_sessions = session_repository.select_all()
+    assignable_sessions = [x for x in filterfalse(lambda m: m.id in [session.id for session in sessions], all_sessions)]
+
+    return render_template("members/show.html", member = member, sessions = sessions, assignable_sessions = assignable_sessions)

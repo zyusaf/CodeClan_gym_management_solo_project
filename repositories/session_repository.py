@@ -52,7 +52,7 @@ def members(session):
     results = run_sql(sql, values)
 
     for row in results:
-        member = Member(row['first_name'], ['last_name'], row['id'])
+        member = Member(row['first_name'], row['last_name'], row['id'])
         members.append(member)
     
     return members

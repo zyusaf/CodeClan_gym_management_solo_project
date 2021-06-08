@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> {{member.first_name}} {{member.last_name}} </h1>
+
+<h3>Sessions member booked on:</h3>
+<ul>
+    {% for session in sessions %}
+    <li>{{session.description}} {{session.duration}}</li>
+    {% endfor %}
+</ul>
+<form action="/members/{{ member.id }}/add_session" method="POST">
+    <label for="session">Add session to member:</label>
+    <select name="session_id" id="session">
+        {% for session in assignable_sessions %}
+            <option value="{{ session.id }}">{{session.description}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Add Session">
+</form>
+
+{% endblock %}

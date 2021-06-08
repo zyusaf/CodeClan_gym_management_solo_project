@@ -23,10 +23,10 @@ session_repository.save(session1)
 session2 = Session("Zumba", 45)
 session_repository.save(session2)
 
-member_session1 = Member_Session(member1, session1, "Couldn't sit for a week!")
+member_session1 = Member_Session(member1, session1, "Ali has great focus, nice to have in the class")
 member_session_repository.save(member_session1)
 
-member_session2 = Member_Session(member2, session2, "Love zumba and the instructor was great")
+member_session2 = Member_Session(member2, session2, "Kept trying to put on eye of the tiger!")
 member_session_repository.save(member_session2)
 
 pdb.set_trace()
