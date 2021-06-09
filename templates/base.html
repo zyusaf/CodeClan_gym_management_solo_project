@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sessions.css') }}">
     <title>GloboGym Manager</title>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
+            <ul class="top-nav-bar">
+                <li>
+                    <a href="#" class="logo">GloboGym</a>
+                </li>
                 <li>
                     <a href="/">Home</a>
                 </li>
@@ -25,12 +31,33 @@
             </ul>
         </nav>
     </header>
-    <section>
+    <section class="main-background-img">
+        <section>
         {% block content %}
 
         {% endblock %}
+        </section>
     </section>
-    <footer></footer>
+    <footer class="footer">
+        <div class="container row footer-area">
+            <h3 class="footer-title">
+                GloboGym
+            </h3>
+            <div class="footer-widget">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Clients</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-widget">
+                <p>634 Floor <br> Castle Street Edinburgh EH2 5EO <br>
+                    <a href="#">0131 420 7234</a> <br>
+                    <a href="#">contact@globogym.co.uk</a>
+                </p>
+            </div>
+        </div>
+    </footer>
     
 </body>
 </html>

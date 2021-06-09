@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row {
+    gap: 1fr;
+    grid-auto-flow: row;
+    grid-template-columns: 30% 30% 30%;
+}
+
+header {
+    margin-top: 0px;
+}
+
+.top-nav-bar {
+    display: flex;
+    margin: 0;
+    padding: 10px;
+    background-color: purple;
+    color: whitesmoke;
+}
+
+.top-nav-bar li:first-child {
+    margin-right: auto;
+}
+
+.top-nav-bar li {
+    list-style: none;
+}
+
+.top-nav-bar a {
+    margin: 10px;
+    border-radius: 5px;
+    background: blue;
+    color: whitesmoke;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+}
+
+.top-nav-bar .logo {
+    background: purple;
+}
+
+.home-page-text {
+    margin: 0;
+    font-size: 50px;
+    text-align: center;
+    color: whitesmoke;
+    padding: 100px 200px 600px 0;
+}
+
+.main-background-img {
+    background-image: url(../img/third-space-luxury-gym.png);
+    opacity: 0.9;
+    max-width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: -8;
+}
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+}
