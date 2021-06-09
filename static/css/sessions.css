@@ -1,6 +1,19 @@
-
+.all-sessions {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .session {
+    padding: 40px;
+    height: 100px;
+    width: 100px;
+    border-radius: 3px;
+}
+
+.new-session {
+    padding: 200px 0px 400px 30px;
+}
+
+.new-session-form {
     display: flex;
-    justify-content: space-around;
 }

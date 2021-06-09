@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 class="sessions-title">Sessions</h2>
+<h2 class="page-title">Sessions</h2>
 
 <a href="sessions/new">New Session</a>
+
+<section class="all-sessions">
 
 {% for session in sessions %}
 
 <section class="session">
-    <p> <a href="/sessions/{{ session.id }}">{{ session.description }}</a> Duration: {{session.duration}} minutes</p> <br>
+    <p> <a href="/sessions/{{ session.id }}">{{ session.description }}</a> Duration: {{session.duration}} minutes</p>
     <button><a href="/sessions/{{ session.id }}/edit">Edit</a></button>
     <form action="/sessions/{{ session.id }}/delete" method="POST">
     <input type="submit" value="Delete" id="delete_button"></form>
 </section>
 
 {% endfor %}
+
+</section>
+
 {% endblock %}

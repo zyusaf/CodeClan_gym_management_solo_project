@@ -3,6 +3,13 @@ body {
     margin: 0px;
 }
 
+.page-title {
+    margin: 0;
+    color: whitesmoke;
+    font-size: 30px;
+    padding: 20px 20px 20px 20
+}
+
 .container {
     display: flex;
     justify-content: space-between;
