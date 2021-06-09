@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{session.description}} </h1>
+
+<section class="edit-page">
+
+<h1 class="session-description-title"> {{session.description}} </h1>
 
 <p>Duration: {{session.duration}}</p>
 
@@ -20,5 +23,7 @@
     </select>
     <input type="submit" value="Add Member">
 </form>
+
+</section>
 
 {% endblock %}

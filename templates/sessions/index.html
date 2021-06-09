@@ -3,14 +3,14 @@
 
 <h2 class="page-title">Sessions</h2>
 
-<a href="sessions/new">New Session</a>
+<a class="new-item" href="sessions/new">New Session</a>
 
 <section class="all-sessions">
 
 {% for session in sessions %}
 
 <section class="session">
-    <p> <a href="/sessions/{{ session.id }}">{{ session.description }}</a> Duration: {{session.duration}} minutes</p>
+    <p> <a href="/sessions/{{ session.id }}">{{ session.description }}</a> <br> Duration: {{session.duration}} minutes</p>
     <button><a href="/sessions/{{ session.id }}/edit">Edit</a></button>
     <form action="/sessions/{{ session.id }}/delete" method="POST">
     <input type="submit" value="Delete" id="delete_button"></form>

@@ -1,18 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Members</h2>
+<h2 class="page-title">Members</h2>
 
-<a href="members/new">New Member</a>
+<a class="new-item" href="members/new">New Member</a>
+
+<section class="all-sessions">
 
 {% for member in members %}
 
-<section>
+<section class="session">
     <p> <a href="/members/{{ member.id }}">{{ member.first_name }} {{member.last_name}}</a></p>
     <button><a href="/members/{{ member.id }}/edit">Edit</a></button>
     <form action="/members/{{ member.id }}/delete" method="POST">
     <input type="submit" value="Delete" id="delete_button"></form>
 </section>
 
-{% endfor %}
+
+{% endfor%}
+
+</section>
+
 {% endblock %}

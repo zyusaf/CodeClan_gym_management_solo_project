@@ -1,19 +1,42 @@
 .all-sessions {
     display: flex;
     flex-wrap: wrap;
+    padding: 150px 0 300px 0;
+}
+
+.new-item {
+    font-size: 20px;
+    padding: 20px 0 20px 30px;
 }
 
 .session {
     padding: 40px;
-    height: 100px;
-    width: 100px;
-    border-radius: 3px;
-}
-
-.new-session {
-    padding: 200px 0px 400px 30px;
+    height: 180px;
+    width: 200px;
+    border-style: solid;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 0 40px 0 40px;
+    background-color: turquoise;
 }
 
 .new-session-form {
     display: flex;
+    padding: 200px 0 450px 30px;
+    font-size: 30px;
+    justify-content: space-evenly;
+    color: whitesmoke;
+}
+
+.form-div {
+    font-size: 20px;
+}
+
+.session-description-title {
+    margin: 0;
+}
+
+.edit-page {
+    padding: 300px 0 300px 30px;
+    color: whitesmoke;
 }

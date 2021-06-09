@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="new-session">
+<h2 class="page-title">Edit a session</h2>
 
 <form class="new-session-form" action="/sessions/{{session.id}}" method="POST">
     <div>
@@ -11,10 +11,8 @@
     <div>
         <label for="duration">Duration:</label>
         <input type="number" name="duration" id="duration" value="{{session.duration}}">
-    </div>
     <input type="submit" value="Edit Session">
+    </div>
 </form>
-
-</section>
 
 {% endblock %}

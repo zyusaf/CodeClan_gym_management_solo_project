@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1> {{member.first_name}} {{member.last_name}} </h1>
+
+<section class="edit-page">
+
+<h1 class="session-description-title"> {{member.first_name}} {{member.last_name}} </h1>
 
 <h3>Sessions member booked on:</h3>
 <ul>
@@ -18,5 +21,7 @@
     </select>
     <input type="submit" value="Add Session">
 </form>
+
+</section>
 
 {% endblock %}

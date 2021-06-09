@@ -7,7 +7,12 @@ body {
     margin: 0;
     color: whitesmoke;
     font-size: 30px;
-    padding: 20px 20px 20px 20
+    padding: 30px 30px 30px 30px;
+}
+
+.new-item {
+    color: whitesmoke;
+    padding: 30px 30px 30px 30px;
 }
 
 .container {
@@ -54,6 +59,7 @@ header {
 
 .top-nav-bar .logo {
     background: purple;
+    font-size: 20px;
 }
 
 .home-page-text {
