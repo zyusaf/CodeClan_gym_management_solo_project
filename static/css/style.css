@@ -50,7 +50,7 @@ header {
 .top-nav-bar a {
     margin: 10px;
     border-radius: 5px;
-    background: blue;
+    background: rgba(40, 207, 199, 0.342);
     color: whitesmoke;
     display: block;
     padding: 15px;
